@@ -18,6 +18,10 @@ config/icon="res://icon.png"
 
 swipe=[  ]
 
+[physics]
+
+2d/default_gravity=1000
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
