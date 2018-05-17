@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Nivel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://OtroNivel.gd" type="Script" id=2]
+[ext_resource path="res://skull.png" type="Texture" id=3]
+
+[node name="Nivel" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Tipito" parent="." index="1"]
+
+position = Vector2( 930.851, 199.493 )
+
+[node name="Icono" parent="Tipito" index="0"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" parent="Tipito" index="1"]
+
+visible = true
+
+
+[editable path="Tipito"]
