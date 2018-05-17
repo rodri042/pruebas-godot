@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tiles/awningGreen.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/awningGreenRed.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/awningRed.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35, 35 )
+
+[node name="Node" type="Node"]
+
+[node name="awningGreenRed" type="Sprite" parent="." index="0"]
+
+position = Vector2( -162, -30 )
+scale = Vector2( 0.942857, 0.942857 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="awningGreenRed" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 1.0
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="awningGreenRed/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="awningGreen" type="Sprite" parent="." index="1"]
+
+position = Vector2( -96, -32 )
+scale = Vector2( 0.914286, 0.914286 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="awningGreen" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="awningGreen/StaticBody2D2" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="awningRed" type="Sprite" parent="." index="2"]
+
+position = Vector2( -32, -32 )
+scale = Vector2( 0.914286, 0.914286 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="awningRed" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="awningRed/StaticBody2D3" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/awningGreenRed.png-a09cae9fd89e7b02ff3ac3e9998c7762.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="7f2a9b30f631c8ee0438ee9d394d3cb9"
+source_file="res://Tiles/awningGreenRed.png"
+source_md5="2949087d1ac7bccc43da48d274ef8954"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="12f36d0b19b1b00da7a1440104db6e90"
+dest_files=[ "res://.import/awningGreenRed.png-a09cae9fd89e7b02ff3ac3e9998c7762.stex" ]
+dest_md5="55a4870abd4d6765b9dabc3d1cd13f62"
 
 [params]
 
