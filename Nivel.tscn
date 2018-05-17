@@ -3,7 +3,7 @@
 [ext_resource path="res://Tipito.tscn" type="PackedScene" id=1]
 [ext_resource path="res://InputHandler.gd" type="Script" id=2]
 
-[node name="Nivel" type="Node2D"]
+[node name="Nivel" type="Node2D" index="0"]
 
 [node name="Camara" type="Camera2D" parent="." index="0"]
 
