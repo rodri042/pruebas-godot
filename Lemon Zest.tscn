@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Lemon Zest.gd" type="Script" id=1]
+[ext_resource path="res://hopo.png" type="Texture" id=2]
+
+[node name="RigBody" type="RigidBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.5
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Applied Forces", "Collision" ]
+
+[node name="Icono" type="Sprite" parent="." index="0"]
+
+position = Vector2( -2.13201, -8.9215 )
+scale = Vector2( 0.103856, 0.0938863 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+position = Vector2( -0.559651, -20.1022 )
+rotation = -0.0132611
+scale = Vector2( 2.25541, 1.90208 )
+build_mode = 0
+polygon = PoolVector2Array( -3.77797, -11.7044, -2.28317, -11.5495, -0.8163, -8.89746, 0.904139, -4.13833, 2.01763, -4.58088, -0.334009, -12.3732, 1.06318, -13.4028, 3.09378, -11.5964, 4.34339, -9.34211, 3.66148, -7.8412, 4.98782, -7.49173, 6.22126, -3.79182, 7.41399, -1.40703, 9.86043, -2.09151, 10.8543, -1.74727, 10.3683, 2.05704, 7.83998, 5.10628, 5.35047, 14.597, 1.77143, 17.4325, -2.59846, 16.6409, -4.3189, 11.8817, -9.73657, 10.6135, -9.64544, 2.46527, -8.20709, -2.24419, -5.38448, -1.87118, -3.88821, -1.84765, -1.86055, 0.221654, -4.02433, -4.54445, -4.73844, -10.0764 )
+
+

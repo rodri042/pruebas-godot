@@ -7,10 +7,10 @@ path="res://.import/awningGreenRed.png-a09cae9fd89e7b02ff3ac3e9998c7762.stex"
 [deps]
 
 source_file="res://Tiles/awningGreenRed.png"
-source_md5="2949087d1ac7bccc43da48d274ef8954"
+source_md5="eba3b2f3d74f4af6f4651b4b6c77824c"
 
 dest_files=[ "res://.import/awningGreenRed.png-a09cae9fd89e7b02ff3ac3e9998c7762.stex" ]
-dest_md5="55a4870abd4d6765b9dabc3d1cd13f62"
+dest_md5="cb931310de02af9527bebf1263f52b51"
 
 [params]
 
