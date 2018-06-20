@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 35.3861
 
-[node name="coin" type="Area2D" index="0"]
+[node name="coin" type="Area2D"]
 
 position = Vector2( 309.666, 326.744 )
 scale = Vector2( 0.382997, 0.382997 )

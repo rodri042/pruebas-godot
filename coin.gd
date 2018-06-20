@@ -1,8 +1,10 @@
 extends Area2D
+signal CoinTaken
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var isTaken = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -15,10 +17,13 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
 func _on_coin_body_entered(body):
+	if isTaken: return
+	
+	isTaken = true
 	$sound.play()
 	visible = false
+	emit_signal("CoinTaken")
 	pass # replace with function body
 
 
