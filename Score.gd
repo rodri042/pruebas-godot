@@ -10,6 +10,5 @@ func _ready():
 func _process(delta):
 	$label.text = "Moneditas: %s" % score
 
-
-func _on_CoinTaken():
+func sumaUno():
 	score = score + 1

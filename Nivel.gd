@@ -9,9 +9,7 @@ func _ready():
 	# Initialization here
 	
 	for coin in $coins.get_children():
-		coin.connect("CoinTaken", $hud/score, "_on_CoinTaken")
-		
-	pass
+		coin.connect("CoinTaken", $hud/score, "sumaUno")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
