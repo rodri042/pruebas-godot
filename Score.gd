@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	$label.text = "Moneditas: %s" % score
+	$label.text = "Tortitas: %s" % score
 
 func sumaUno():
 	score = score + 1

@@ -21,10 +21,9 @@ func _on_coin_body_entered(body):
 	if isTaken: return
 	
 	isTaken = true
-	$sound.play()
+	#$sound.play()
 	visible = false
 	emit_signal("CoinTaken")
-	pass # replace with function body
 
 
 func _on_sound_finished():

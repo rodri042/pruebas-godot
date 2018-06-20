@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Lemon Zest.gd" type="Script" id=1]
 [ext_resource path="res://hopo.png" type="Texture" id=2]
@@ -6,8 +6,20 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 16.3118
-height = 10.861
+radius = 14.3387
+height = 15.4809
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 4.55065
+height = 2.36628
+
+[sub_resource type="CapsuleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 11.064
+height = 13.4822
 
 [node name="RigBody" type="RigidBody2D"]
 
@@ -30,18 +42,32 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Applied Forces", "Collision" ]
+_sections_unfolded = [ "Applied Forces", "Collision", "Transform" ]
 
 [node name="Icono" type="Sprite" parent="." index="0"]
 
-position = Vector2( -2.13201, -8.9215 )
+position = Vector2( -6.11254, -16.8826 )
 scale = Vector2( 0.103856, 0.0938863 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 3.47115, -10.0979 )
-rotation = 0.267959
+position = Vector2( 1.06842, -17.2701 )
+rotation = 0.415587
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 18.4241, -27.9991 )
+rotation = 0.938551
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -4.45387, -39.2014 )
+rotation = -0.440798
+scale = Vector2( 1, 1 )
+shape = SubResource( 3 )
 
 

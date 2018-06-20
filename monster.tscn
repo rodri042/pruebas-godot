@@ -36,7 +36,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 35.5594
 
-[node name="body" type="KinematicBody2D"]
+[node name="body" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -49,7 +49,7 @@ _sections_unfolded = [ "collision" ]
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 8
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

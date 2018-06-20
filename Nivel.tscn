@@ -1,14 +1,34 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Nivel.gd" type="Script" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
 [ext_resource path="res://Lemon Zest.tscn" type="PackedScene" id=3]
-[ext_resource path="res://InputHandler.gd" type="Script" id=4]
-[ext_resource path="res://Tiles.tres" type="TileSet" id=5]
-[ext_resource path="res://coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Score.tscn" type="PackedScene" id=7]
-[ext_resource path="res://goal.tscn" type="PackedScene" id=8]
-[ext_resource path="res://monster.tscn" type="PackedScene" id=9]
+[ext_resource path="res://shadow.png" type="Texture" id=4]
+[ext_resource path="res://InputHandler.gd" type="Script" id=5]
+[ext_resource path="res://Tiles.tres" type="TileSet" id=6]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Score.tscn" type="PackedScene" id=8]
+[ext_resource path="res://goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://monster.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "New Anim"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.75824, 0.75824 ), Vector2( 2.08356, 2.08356 ) ]
+}
 
 [node name="Nivel" type="Node2D" index="0"]
 
@@ -19,13 +39,15 @@ script = ExtResource( 1 )
 position = Vector2( 1190.5, 329.166 )
 scale = Vector2( 5.86274, 5.86274 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="dog" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = true
 position = Vector2( 499.944, 151.058 )
-z_index = 1
-_sections_unfolded = [ "Applied Forces", "Collision", "Z Index" ]
+z_index = 2
+_sections_unfolded = [ "Applied Forces", "Collision", "Transform", "Z Index" ]
 
 [node name="Camara" type="Camera2D" parent="dog" index="2"]
 
@@ -53,14 +75,53 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Transform", "Z Index" ]
 
+[node name="Light2D" type="Light2D" parent="dog" index="5"]
+
+position = Vector2( 0.639435, -20.2076 )
+scale = Vector2( 2.08356, 2.08356 )
+z_index = 1
+enabled = true
+editor_only = false
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dog/Light2D" index="0"]
+
+root_node = NodePath("..")
+autoplay = "New Anim"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/New Anim" = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause", "Playback Options" ]
+
 [node name="inputHandler" type="Node" parent="." index="2"]
 
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="tileMap" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -82,109 +143,106 @@ __meta__ = {
 
 [node name="coins" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
+[node name="coin" parent="coins" index="0" instance=ExtResource( 7 )]
 
-[node name="coin" parent="coins" index="0" instance=ExtResource( 6 )]
-
-[node name="coin2" parent="coins" index="1" instance=ExtResource( 6 )]
+[node name="coin2" parent="coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 406.253, 349.87 )
 
-[node name="coin3" parent="coins" index="2" instance=ExtResource( 6 )]
+[node name="coin3" parent="coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 468.83, 338.987 )
 
-[node name="coin4" parent="coins" index="3" instance=ExtResource( 6 )]
+[node name="coin4" parent="coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 523.245, 341.708 )
 
-[node name="coin5" parent="coins" index="4" instance=ExtResource( 6 )]
+[node name="coin5" parent="coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 589.903, 336.267 )
 
-[node name="coin6" parent="coins" index="5" instance=ExtResource( 6 )]
+[node name="coin6" parent="coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 649.759, 343.069 )
 
-[node name="coin7" parent="coins" index="6" instance=ExtResource( 6 )]
+[node name="coin7" parent="coins" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 708.256, 318.582 )
 
-[node name="coin8" parent="coins" index="7" instance=ExtResource( 6 )]
+[node name="coin8" parent="coins" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 761.31, 309.059 )
 
-[node name="coin9" parent="coins" index="8" instance=ExtResource( 6 )]
+[node name="coin9" parent="coins" index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 761.31, 309.059 )
 
-[node name="coin10" parent="coins" index="9" instance=ExtResource( 6 )]
+[node name="coin10" parent="coins" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 829.329, 304.978 )
 
-[node name="coin11" parent="coins" index="10" instance=ExtResource( 6 )]
+[node name="coin11" parent="coins" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 866.059, 272.329 )
 
-[node name="coin12" parent="coins" index="11" instance=ExtResource( 6 )]
+[node name="coin12" parent="coins" index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 870.14, 208.392 )
 
-[node name="coin13" parent="coins" index="12" instance=ExtResource( 6 )]
+[node name="coin13" parent="coins" index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 829.329, 160.779 )
 
-[node name="coin14" parent="coins" index="13" instance=ExtResource( 6 )]
+[node name="coin14" parent="coins" index="13" instance=ExtResource( 7 )]
 
 position = Vector2( 920.01, 160.779 )
 
-[node name="coin15" parent="coins" index="14" instance=ExtResource( 6 )]
+[node name="coin15" parent="coins" index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 982.931, 173.733 )
 
-[node name="coin16" parent="coins" index="15" instance=ExtResource( 6 )]
+[node name="coin16" parent="coins" index="15" instance=ExtResource( 7 )]
 
 position = Vector2( 1056.96, 182.986 )
 
-[node name="coin17" parent="coins" index="16" instance=ExtResource( 6 )]
+[node name="coin17" parent="coins" index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 1132.83, 147.825 )
 
-[node name="coin18" parent="coins" index="17" instance=ExtResource( 6 )]
+[node name="coin18" parent="coins" index="17" instance=ExtResource( 7 )]
 
 position = Vector2( 1206.86, 192.24 )
 
-[node name="coin19" parent="coins" index="18" instance=ExtResource( 6 )]
+[node name="coin19" parent="coins" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 1247.57, 240.356 )
 
-[node name="coin20" parent="coins" index="19" instance=ExtResource( 6 )]
+[node name="coin20" parent="coins" index="19" instance=ExtResource( 7 )]
 
 position = Vector2( 1332.7, 303.277 )
 
-[node name="coin21" parent="coins" index="20" instance=ExtResource( 6 )]
+[node name="coin21" parent="coins" index="20" instance=ExtResource( 7 )]
 
 position = Vector2( 1378.96, 336.588 )
 
 [node name="hud" type="CanvasLayer" parent="." index="5"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="score" parent="hud" index="0" instance=ExtResource( 7 )]
+[node name="score" parent="hud" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 13.5661, 10.5514 )
 
-[node name="goal" parent="." index="6" instance=ExtResource( 8 )]
+[node name="goal" parent="." index="6" instance=ExtResource( 9 )]
 
 position = Vector2( 2126.35, 478.751 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="monster" parent="." index="7" instance=ExtResource( 9 )]
+[node name="monster" parent="." index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 682.253, 221.544 )
 
