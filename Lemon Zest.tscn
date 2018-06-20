@@ -21,7 +21,7 @@ custom_solver_bias = 0.0
 radius = 11.064
 height = 13.4822
 
-[node name="RigBody" type="RigidBody2D"]
+[node name="RigBody" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -50,20 +50,20 @@ position = Vector2( -6.11254, -16.8826 )
 scale = Vector2( 0.103856, 0.0938863 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="shape1" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 1.06842, -17.2701 )
 rotation = 0.415587
 scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+[node name="shape2" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 18.4241, -27.9991 )
 rotation = 0.938551
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+[node name="shape3" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -4.45387, -39.2014 )
 rotation = -0.440798

@@ -13,9 +13,16 @@ func _process(delta):
 		
 	if self.linear_velocity.y < -gravity:
 		self.linear_velocity.y = -gravity
-		
-	
+
 
 func _on_InputHandler_SwipeOccurred(direction, speed):
 	self.apply_impulse(Vector2(0, 0), direction * gravity)
-	$Icono.set_flip_h( direction.x < 0 )	
+	#$Icono.set_flip_h(direction.x < 0)
+	if direction.x < 0:
+		$shape1.set_scale(Vector2(-1,1))
+		$shape2.set_scale(Vector2(-1,1))
+		$shape3.set_scale(Vector2(-1,1))
+	else:
+		$shape1.set_scale(Vector2(-1,-1))
+		$shape2.set_scale(Vector2(-1,-1))
+		$shape3.set_scale(Vector2(-1,-1))

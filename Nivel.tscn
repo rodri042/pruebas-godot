@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.75824, 0.75824 ), Vector2( 2.08356, 2.08356 ) ]
 }
 
-[node name="Nivel" type="Node2D" index="0"]
+[node name="Nivel" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -77,6 +77,7 @@ _sections_unfolded = [ "Drag Margin", "Transform", "Z Index" ]
 
 [node name="Light2D" type="Light2D" parent="dog" index="5"]
 
+visible = false
 position = Vector2( 0.639435, -20.2076 )
 scale = Vector2( 2.08356, 2.08356 )
 z_index = 1
